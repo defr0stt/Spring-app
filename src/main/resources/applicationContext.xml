@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
@@ -14,14 +15,27 @@
         <constructor-arg value="Refactoring"/>
     </bean>
 
-    <bean id="music"
+    <bean id="musicRock"
+          class="ua.lpnu.spring.music.RockMusic">
+    </bean>
+
+    <bean id="musicClassic"
           class="ua.lpnu.spring.music.ClassicalMusic">
+    </bean>
+
+    <bean id="musicJazz"
+          class="ua.lpnu.spring.music.JazzMusic">
     </bean>
 
     <bean id="musicPlayer"
           class="ua.lpnu.spring.music.MusicPlayer">
-        <constructor-arg ref="music"/>
-        <property name="music" ref="music"/>
+        <property name="musicList">
+            <list value-type="ua.lpnu.spring.music.Music">
+                <ref bean="musicClassic"/>
+                <ref bean="musicRock"/>
+                <ref bean="musicJazz"/>
+            </list>
+        </property>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>

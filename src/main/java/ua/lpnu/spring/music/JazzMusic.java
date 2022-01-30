@@ -1,14 +1,14 @@
 package ua.lpnu.spring.music;
 
-public class ClassicalMusic implements Music
+public class JazzMusic implements Music
 {
     @Override
     public String playMusic() {
-        return "classical music is playing...";
+        return "jazz music is playing...";
     }
 
     @Override
     public String toString() {
-        return "Classical";
+        return "Jazz";
     }
 }

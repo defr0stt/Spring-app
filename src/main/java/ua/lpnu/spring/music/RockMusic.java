@@ -6,4 +6,9 @@ public class RockMusic implements Music
     public String playMusic() {
         return "rock music is playing...";
     }
+
+    @Override
+    public String toString() {
+        return "Rock";
+    }
 }
