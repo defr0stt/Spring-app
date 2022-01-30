@@ -6,9 +6,4 @@ public class JazzMusic implements Music
     public String playMusic() {
         return "jazz music is playing...";
     }
-
-    @Override
-    public String toString() {
-        return "Jazz";
-    }
 }

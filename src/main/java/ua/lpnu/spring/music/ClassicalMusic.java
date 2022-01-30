@@ -6,9 +6,4 @@ public class ClassicalMusic implements Music
     public String playMusic() {
         return "classical music is playing...";
     }
-
-    @Override
-    public String toString() {
-        return "Classical";
-    }
 }
