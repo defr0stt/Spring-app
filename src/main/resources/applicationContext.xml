@@ -7,13 +7,23 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
     <bean id="testBean"
           class="ua.lpnu.spring.bean.TestBean">
         <constructor-arg value="Refactoring"/>
     </bean>
 
     <bean id="music"
-          class="ua.lpnu.spring.music.RockMusic">
+          class="ua.lpnu.spring.music.ClassicalMusic">
+    </bean>
+
+    <bean id="musicPlayer"
+          class="ua.lpnu.spring.music.MusicPlayer">
+        <constructor-arg ref="music"/>
+        <property name="music" ref="music"/>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
 </beans>
