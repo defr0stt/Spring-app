@@ -12,4 +12,8 @@
         <constructor-arg value="Refactoring"/>
     </bean>
 
+    <bean id="music"
+          class="ua.lpnu.spring.music.RockMusic">
+    </bean>
+
 </beans>
