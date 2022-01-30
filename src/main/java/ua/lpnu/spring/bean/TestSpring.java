@@ -1,4 +1,4 @@
-package ua.lpnu.spring;
+package ua.lpnu.spring.bean;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

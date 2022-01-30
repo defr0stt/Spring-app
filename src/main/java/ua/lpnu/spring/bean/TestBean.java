@@ -1,4 +1,4 @@
-package ua.lpnu.spring;
+package ua.lpnu.spring.bean;
 
 public class TestBean
 {
