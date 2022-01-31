@@ -9,8 +9,16 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
+    <!-- init-method : process of initializing of the object
+         destroy-method : process of deleting of the object
+         factory-method : creates objects throw the method, not constructor
+            (by default scope = singleton)
+    -->
     <bean id="testBean"
-          class="ua.lpnu.spring.bean.TestBean">
+          class="ua.lpnu.spring.bean.TestBean"
+          init-method="initialization"
+          destroy-method="destroying"
+          factory-method="creatableMethod">
         <constructor-arg value="Refactoring"/>
     </bean>
 
@@ -28,7 +36,9 @@
 
     <bean id="musicPlayer"
           class="ua.lpnu.spring.music.MusicPlayer"
-          scope="prototype">
+          scope="prototype"
+          init-method="initialization"
+          destroy-method="destroying">
         <property name="musicList">
             <list value-type="ua.lpnu.spring.music.Music">
                 <ref bean="musicClassic"/>
