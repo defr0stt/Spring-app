@@ -9,9 +9,11 @@ public class TestMusic
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer musicPlayer1 = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer musicPlayer2 = context.getBean("musicPlayer", MusicPlayer.class);
 
-        musicPlayer.getMusicList();
+        musicPlayer1.getMusicList();
+        System.out.println(musicPlayer1 == musicPlayer2);
 
         context.close();
     }
