@@ -21,7 +21,7 @@ public class VehiclePark
 
     @Value("${vehiclePark.example1}")
     private int example1;
-    @Value("${vehiclePark.example2}")
+    @Value("2")
     private int example2;
 
     @Autowired
