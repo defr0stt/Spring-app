@@ -7,3 +7,12 @@
              dependencies
 
 @Qualifier("...") = uses with @Autowired for specification of the bean type
+
+@Value("...") = value for variables
+
+@Scope("...") = by default - singleton
+         to create new beans - prototype
+
+@PostConstruct = init-method    <-\
+                                   } removed in Java 11, so u need to add Javax Annotation API to dependencies
+@PreDestroy = destroy-method    <-/
