@@ -2,7 +2,7 @@ package ua.lpnu.spring.vehicle;
 
 import java.util.List;
 
-interface Vehicle
+public interface Vehicle
 {
     List move();
 }
