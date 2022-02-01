@@ -1,5 +1,6 @@
 package ua.lpnu.spring.vehicle;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component("Plane")
+@Scope("prototype")
 public class Plane implements Vehicle
 {
     @Override

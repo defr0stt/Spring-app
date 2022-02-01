@@ -11,5 +11,6 @@
             annotations in the classes what we want to create
     -->
         <context:component-scan base-package="ua.lpnu.spring.vehicle"/>
+        <context:property-placeholder location="classpath:vehiclePark.properties"/>
 
 </beans>
