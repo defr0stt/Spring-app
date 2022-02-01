@@ -1,0 +1,9 @@
+@Component("...") = creating new beans
+
+@Autowired = for dependency injection
+             after @Component checks if one the beans
+             fits to this dependency; if it's true process
+             dependency injection is going to introduce
+             dependencies
+
+@Qualifier("...") = uses with @Autowired for specification of the bean type
